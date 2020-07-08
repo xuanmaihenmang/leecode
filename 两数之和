@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        map<int,int>myhash;
+        vector<int>out;
+        for(int i=0;i<nums.size();i++)
+        {
+            myhash[nums[i]]=i;
+        }
+        for(int i=0;i<nums.size();i++)
+        {
+            if(myhash[target-nums[i]]&&(myhash[target-nums[i]])!=i)
+            {
+                out.push_back(i);
+                out.push_back(myhash[target-nums[i]]);
+                break;
+            }
+        }
+        return out;
+
+    }
+};
